@@ -1,0 +1,57 @@
+=-=-=-=-=-=-=-=-=-=-= Observações =-=-=-=-=-=-=-=-=-=-=
+
+### Todos comando no linux são em minusculo!
+
+cor azul: diretorio
+cor branca: arquivos
+cor de fundo verde: diretorio oculto
+(Atalho: Ctrl C) --> Cancela execução de qualquer comando
+
+=-=-=-=-=-=-=-=-=-=-= Comandos =-=-=-=-=-=-=-=-=-=-=
+
+<comando> --Help --> Ajuda de como usar o comdado, mostrá suas opções.
+clear --> Limpar o promt (Atalho: Ctrl + L).
+
+pwd --> Mostrar diretorio/caminho onde você estar.
+cd <caminho> --> Mover de diretorio.
+cd .. --> Retorna um diretorio na hirearquia.
+ls [-opção] --> Lista todos arquivos e diretorios do diretorio onde você estar.
+	-l --> Acresenta todas informações dos arquivos e diretorios.
+	<nome> --> Listagem filtrada.
+		EX. <ss*.> --> Tudo que se inicia com "ss".
+		EX. <g?o*> --> Primeira letra tem que ser "g", a segunda qualquer uma, a terceira "o" e após isso qualqur coisa.
+		Nesses dois EX., caso tenha diretorio, listará no final so seus conteudo intero.
+| --> pipe, combinar comandos.
+moro --> Limita exibição e vá navegando/exbindo os arquivos controladamente.
+
+touch [nome.extenssão] --> Cria arquivo vazio.
+mkdir --> Cria diretorio.
+cat --> visualizar arq. de texto	
+cat /etc/group --> Lista/visualiza todos os grupos do sistema
+nano --> Editor de texto
+vi --> Editor de texto
+	i -> Entrar no modo de edição
+	esc -> Sair do mode de edição
+	:Wq -> Salva e fecha o arquivo
+
+sudo --> Aplica permissões de administrador na execução do comando
+sudo passwd <usuario> --> Atribui uma senha ao usuario
+su --> Logar no super usuario (root)
+su <usuario> --> Sair do super usuario e logar em outro usuario convencional
+
+rm [-opção] --> Remover arquivos e diretorios.
+	-rf --> Apagar todo conteudo interno e forçará a exclussão.
+
+find [-opção] --> Procurar arquivo.
+	-name --> Pelo nome.
+
+history --> Lista comando executado anteriormente
+	-c --> Apaga historico
+
+shutdown 0 --> Desligar a máquina, comando mais o tempo.
+
+ip a -> Pega endereço ip.
+sudo apt-get install openssh-server --> Intalar pacote.
+apt-get --purge remove <pacote>  --> Remover pacote e todos seus arq. de confg. 
+ssh usuario@ip --> acesso remoto.
+
