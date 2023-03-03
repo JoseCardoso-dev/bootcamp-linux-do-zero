@@ -1,0 +1,104 @@
+=-=-=-=-=-=-=-=-=-=-= Comandos =-=-=-=-=-=-=-=-=-=-=
+
+#### Gerência de Usuário ####
+
+
+ 
+useradd [nome de logon] --> Criar usuário
+	-m -> Cria pasta home do usuário
+	-c -> Cadastrar nome completo do usuário
+	-s -> Sinalizar qual o shell do usuário (programa de acesso ao kernel)
+	-e -> Data de expiração do usuário
+	-p -> Adicionar senha criptografada (EX: "-p $(openssl passwd -6 senha12345)")
+	-g -> Adicionar usuário em um grupo
+	-G -> Adicionar usuário em vários grupos (EX: "-G adm,sudo")
+	
+chsh -s [nome do shell, EX: /bin/bash] [usuário] --> Acrescentar/Atualizar o shell do usuário
+passwd [usuário] --> Adicionar/Modificar a senha do usuário
+	-e -> Adicionar uma data de expiração ("-e" sem data, será pedido a alteração no próximo logon)
+
+userdel -f [nome de logon] --> Excluir usuário
+	-f -> Forçar a exclusão
+	-r -> Remover pasta home e confg. de e-mail (caso tenha)
+	
+usermod [usuário] [alguma das opções do useradd] -> Realizar modificações no usuário
+
+cat /etc/passwd --> Exibir usuário cadastrado no sistema
+
+chmod +x [nome do arq.] --> Adicionando a permissão de execução no arq., EX: arq. com extensão .sh
+./[nome do arq.] --> Executar arq.
+
+groupadd [nome do grupo] --> Criar grupo de usuários
+groupdel [nome do grupo] --> Excluir grupo de usuários
+gpasswd [-opções] [usuário] [grupo] --> Remove usuario do grupo
+	-d -> Remover do grupo
+
+Permissões: r=read (leitura), w=write (gravação), x=execute (execução).
+
+	     Dono|Grupo|Outros
+rwxrwxrwx -> rwx | rwx | rwx
+
+chown [usuario dono]:[grupo] [diretório] --> Alterar dono e grupo do diretório
+
+Leitura(r)=4(100), Gravação(w)=2(010), Execução(x)=1(001), Nenhuma=0(000)
+
+chmod [permissões dono][permissões grupo][permissões outros] --> Editar permissões de um arq. ou diretório (EX: chmod 750 /home/jose/pasta_teste/)
+
+
+
+#### Gerenciamento de Pacotes ####
+
+
+
+apt-get --> Gerência de pacote baixo nível
+	-update -> Obter novas atualizações
+	-upgrade -> Executar atualizações
+	-intall -> Instalar pacote
+	-reinstall -> Reinstalar pacote
+	-remove -> Remove pacote
+	-purge -> Remove pacote e seus arq. de config.
+	
+apt --> Gerencia de pacotes mais moderna, tem uma interação maior com o usuário
+	-list -> Listar pacotes para baixar
+		-list --installed -> Listar pacotes instalado na máquina
+		-list --upgradeable -> Lista pacote instalado que pode ser atualizado
+	-search -> Pesquisar por pacote		
+apt intall unzip --> instalando pacote
+unzip [nome do arq].zip --> Descompactar arq.
+
+apt edit-sources --> Lista de url de diretórios para baixar pacotes, pode adicionar outros
+
+
+#### Gerenciamento de Discos ####
+
+Discos: Dispositivo físico que armazena os arquivos
+Sistemas de arquivos: Uma forma como o SO usa para controlar como os dados são armazenados e recuperados
+	MacOS=HFS, Unix/Linux=Ext3, Ext4 e XFS, Windows=FAT32, NFFS
+Partições: É uma divisão de um disco em parte independentes, cada uma pode ter um sistema de arq. ou SO diferente
+
+lsblk ou fdisk -l --> Visualizar discos do sistema
+mkfs.[sistema de arquivo] [disco] --> Formatar disco (EX: mkfs.ext4 /dev/sdb
+
+mount [disco] [local onde vai ser montado] --> Montar um disco (EX: mount /dev/sdb/ /mnt/disco2/ 
+umount [disco] --> Desmontar o disco
+nano /etc/fstab --> Montar disco automaticamente quando ligar a máquina (EX: /dev/sdb /mnt/disco2/ ext4 defaults 0 0)
+
+cp [origem/arq.] [destino] --> Copiar arquivo
+	-i -> Pergunta se deseja sobrepor o arq.
+	-r -> Copia tudo, diretório e arq.
+	-v -> Sinaliza as etapa do processo
+
+#### Manipulando Processos ####
+
+
+w --> Exibe usuários logado
+who -a --> Exibe usuários logado com seu id, (Basta usar o kill [id])
+
+ps --> Lista processos
+	-a -> Processos de todos usuários
+	-u -> Fornece o nome do usuário
+	-x -> Mostrar processos executado fora do console 	
+	
+kill [id] --> Matá processo pelo id
+killall [nome] --> Matar processo pelo nome
+
