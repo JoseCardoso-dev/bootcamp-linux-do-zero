@@ -9,4 +9,13 @@
 - Acesso remoto via SSH e PuTTY
 - Percorrendo pelo sistema
 - Manipulação de arquivos e pastas
+- Gerenciamento de Permissões
+- Gerenciamento de Usuários
+- Gerenciamento de Pacotes
+- Gerenciamento de Disco
+- Gerenciamento de Processos
+- Instalando e Configurando um Servidor de Arquivos
+- Instalando e Configurando um Servidor de Web
+- Instalando e Configurando um Servidor de Banco de Dados
+- Criando Scripts IaC (Infrastructure as Code)
 
