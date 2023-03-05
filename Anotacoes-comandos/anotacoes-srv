@@ -1,0 +1,46 @@
+###### Servidor de Arquivos ######
+
+SMB --> Protocolo usado para o compartilhamento na rede
+SAMBA --> Programa para utilizar o protocolo SMB e realizar o compartilhamento
+logs --> Histórico de ações feita pelos usuário (Exclusão, armazenamento...)
+
+OBS: Sempre utilizar um disco distinto do que está com o SO
+
+apt install samba --> Instalar o samba
+nano /etc/samba/smb.conf --> Arquivo de configuração do samba/srv de arquivos
+
+
+[pública] --> Nome do compartilhamento
+
+path = /mnt/disco2/publica --> Caminho do diretório
+writable = yes --> Liberação para gravação
+guest ok = yes --> Liberação geral para os convidados
+guest only = yes --> Setando todo mundo que acessar como covidado
+
+
+systemctl restart smbd --> Reiniciando o SAMBA
+systemctl status smbd --> Checando status do SAMBA
+systemctl enable smbd --> Setando para o serviço SAMBA iniciar automaticamente quando ligar a máquina
+
+Config. cliente linux: smb://[endereço ip]/[nome do compartilhamento]
+Config. cliente windows: \\[endereço ip]\[nome do compartilhamento]
+
+
+###### Servidor de WEB ######
+
+apt install apache2 --> Instalar software que transformará sua máquina num servidor web
+systemctl status smbd --> Checando status do apache2
+/var/www/html/ --> Pasta padrão do site que será disponibilizado
+
+
+###### Servidor de MySQL ######
+
+apt install mysql-server-8.0 -y --> Instalar software que transformará sua máquina num servidor Banco de Dados
+
+mysql -u root -p --> Acessando o Banco de Dados (BD)
+show database; --> Listar todos BD
+create databese meuBanco; --> Criar BD
+qualquer comando sql....
+
+
+
