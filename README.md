@@ -14,8 +14,10 @@
 - Gerenciamento de Pacotes
 - Gerenciamento de Disco
 - Gerenciamento de Processos
-- Instalando e Configurando um Servidor de Arquivos
-- Instalando e Configurando um Servidor de Web
-- Instalando e Configurando um Servidor de Banco de Dados
+- Instalando e Configurando um Servidor de Arquivos (SAMBA)
+- Instalando e Configurando um Servidor de Web (Apache)
+- Instalando e Configurando um Servidor de Banco de Dados (MySQL)
 - Criando Scripts IaC (Infrastructure as Code)
-
+- Criando e Configurando um Serviço no Cluster com Docker Swarm
+- Replicando o Volume da Aplicação dentro do Cluster com NFS-Server
+- Criando e Configurando Servidor Proxy Reverso (NGINX) para o Cluster 
